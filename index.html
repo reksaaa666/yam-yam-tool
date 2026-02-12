@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yam Yam Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
 
+<div class="container">
+
+  <header>
+    <h1>Yam Yam Tool</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <p class="subtitle">Analyze your Instagram data. Privately. Instantly.</p>
+
+  <div class="upload-area">
+    <label class="drop">
+      Upload followers_1.json
+      <input type="file" id="followersFile" accept=".json" hidden>
+    </label>
+
+    <label class="drop">
+      Upload following.json
+      <input type="file" id="followingFile" accept=".json" hidden>
+    </label>
+  </div>
+
+  <button id="analyzeBtn">Analyze</button>
+
+  <div id="loading" class="hidden">Analyzing...</div>
+
+  <div id="dashboard" class="hidden">
+
+    <div class="stats">
+      <div class="card">
+        <h3 id="totalFollowers">0</h3>
+        <p>Followers</p>
+      </div>
+
+      <div class="card">
+        <h3 id="totalFollowing">0</h3>
+        <p>Following</p>
+      </div>
+
+      <div class="card">
+        <h3 id="followBack">0</h3>
+        <p>Follow Back</p>
+      </div>
+
+      <div class="card">
+        <h3 id="notFollowBack">0</h3>
+        <p>Not Follow Back</p>
+      </div>
+    </div>
+
+    <canvas id="ratioChart"></canvas>
+
+    <div class="tools">
+      <input type="text" id="searchBox" placeholder="Search username...">
+      <button onclick="downloadCSV()">Download CSV</button>
+    </div>
+
+    <div id="resultList" class="result"></div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
