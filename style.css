@@ -1,1 +1,102 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #ffffff;
+  --accent: #6366f1;
+}
 
+body.light {
+  --bg: #f4f4f5;
+  --card: #ffffff;
+  --text: #111827;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle {
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.upload-area {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.drop {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.drop:hover {
+  background: var(--accent);
+  color: white;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.result {
+  margin-top: 20px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.tools {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
