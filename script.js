@@ -5,7 +5,7 @@ async function analyze() {
   const followingFile = document.getElementById("followingFile").files[0];
 
   if (!followersFile || !followingFile) {
-    alert("Upload both JSON files first.");
+    alert("Upload both JSON files.");
     return;
   }
 
@@ -30,22 +30,25 @@ async function analyze() {
 
     const ratio = ((followBack.length / following.size) * 100).toFixed(1);
 
-    document.getElementById("stats").innerHTML = `
-      <p><strong>Total Followers:</strong> ${followers.size}</p>
-      <p><strong>Total Following:</strong> ${following.size}</p>
-      <p><strong>Follow Back:</strong> ${followBack.length}</p>
-      <p><strong>Not Follow Back:</strong> ${notFollowBackData.length}</p>
-      <p><strong>Follow Back Ratio:</strong> ${ratio}%</p>
-    `;
+    document.getElementById("followersStat").innerHTML =
+      `<h3>${followers.size}</h3><p>Followers</p>`;
+
+    document.getElementById("followingStat").innerHTML =
+      `<h3>${following.size}</h3><p>Following</p>`;
+
+    document.getElementById("followBackStat").innerHTML =
+      `<h3>${notFollowBackData.length}</h3><p>Not Follow Back</p>`;
+
+    document.getElementById("ratioStat").innerHTML =
+      `<h3>${ratio}%</h3><p>Follow Ratio</p>`;
 
     displayResults(notFollowBackData);
 
-    document.getElementById("stats").classList.remove("hidden");
-    document.getElementById("results").classList.remove("hidden");
-    document.getElementById("resultControls").classList.remove("hidden");
+    document.getElementById("dashboard").classList.remove("hidden");
+    document.getElementById("resultSection").classList.remove("hidden");
 
-  } catch (error) {
-    alert("Invalid JSON file format.");
+  } catch {
+    alert("Invalid JSON format.");
   }
 
   document.getElementById("loading").classList.add("hidden");
