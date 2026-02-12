@@ -8,24 +8,47 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>Yam Yam Tool</h1>
-    <p class="subtitle">Instagram Follow Analyzer • Private & Offline</p>
+  <header>
+    <div class="logo">Yam Yam Tool</div>
+    <div class="tag">Private • Offline • No Login</div>
+  </header>
 
-    <div class="upload-section">
-      <label>Followers JSON</label>
+  <main>
+
+    <section class="hero">
+      <h1>Analyze Your Instagram Data<br>Like a Founder.</h1>
+      <p>No tracking. No login. 100% client-side processing.</p>
+    </section>
+
+    <section class="upload-card">
       <input type="file" id="followersFile" accept=".json">
-
-      <label>Following JSON</label>
       <input type="file" id="followingFile" accept=".json">
-
       <button onclick="analyze()">Analyze</button>
-    </div>
+    </section>
 
-    <div id="loading" class="loading hidden">Analyzing...</div>
+    <div id="loading" class="loading hidden">Analyzing data...</div>
 
-    <div id="stats" class="stats hidden"></div>
+    <section id="dashboard" class="dashboard hidden">
+      <div class="stat-card" id="followersStat"></div>
+      <div class="stat-card" id="followingStat"></div>
+      <div class="stat-card" id="followBackStat"></div>
+      <div class="stat-card" id="ratioStat"></div>
+    </section>
 
-    <div class="result-controls hidden" id="resultControls">
-      <input type="text" id="searchInput" placeholder="Search username..." oninput="filterList()">
-      <button onclick="downloadCSV()">Download CSV</but
+    <section class="result-section hidden" id="resultSection">
+      <div class="result-header">
+        <input type="text" id="searchInput" placeholder="Search username..." oninput="filterList()">
+        <button onclick="downloadCSV()">Download CSV</button>
+      </div>
+      <div id="results" class="results"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    Built by Yam Yam • Open Source
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
